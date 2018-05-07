@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="user-scalable=no, width=device-width,
+         initial-scale=1.0, maximum-scale=1.0" />
+    <title>自定义弹出框</title>
+</head>
+
+<style>
+    * {
+        font-size: 1rem;
+    }
+    
+    .bg {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        -webkit-overflow-scrolling: touch;
+        background: rgba(0, 0, 0, .4);
+        display: none;
+    }
+    
+    .infobox_bg {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        margin: -100px 0 0 -40%;
+        border: 1px solid #E8E9F7;
+        background-color: #000;
+        z-index: 1002;
+        width: 80%;
+        height: 200px;
+        pointer-events: none;
+        -webkit-overflow-scrolling: touch;
+        overflow: hidden;
+    }
+    
+    .infobox_title {
+        width: 100%;
+        height: 44px;
+        line-height: 44px;
+        text-align: center;
+        border-bottom: 1px solid #d9d9d9;
+        color: #e58d05;
+        font-size: 1.1rem;
+        background: #f4f5f6;
+    }
+    
+    .infobox_content {
+        padding: 20px 20px 50px 20px;
+        background: #fff;
+        height: 100px;
+        position: relative;
+        pointer-events: none;
+        overflow: hidden;
+    }
+    
+    .infobox_button {
+        display: block;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        font-size: 12px;
+        color: #fff;
+        background: #49BDCE;
+        margin: 0 auto;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        pointer-events: auto;
+    }
+    
+    .infobox_button:hover {
+        background: #1A8E9F;
+    }
+</style>
+
+<body>
+    <table align="center" border="1" cellpadding="3" cellspacing="2" bordercolor="#C0C0C0" style="width:90%;border-style:solid;text-align:left;border-collapse:collapse;">
+        <tbody>
+            <tr style="background-color:#FDFDDF;height:70px">
+                <td><span style="font-weight: bold;">&nbsp;条目</span></td>
+                <td width="100px;"><span style="font-weight: bold;">&nbsp;操作</span></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目1</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目2</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目3</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目4</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目5</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目6</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目7</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目8</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目9</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目9</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目9</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目9</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目9</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目9</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目9</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目9</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目9</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目9</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目9</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+            <tr style="height:70px">
+                <td>&nbsp;这个是条目9</td>
+                <td>&nbsp;<button class='js_click'>删除</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--遮罩层-->
+    <div id="overlay" class="bg"></div>
+    <!--灰度背景-->
+    <!--弹出框-->
+    <div id="infoBox" class="infobox_bg">
+        <div class="infobox_title">确定要删除吗？</div>
+        <div class="infobox_content">
+            这里是正儿八正的提示内容哦这里是正儿八正的提示内容哦这里是正儿八正的提示内容哦
+        </div>
+        <div class="infobox_button" id="button">确定</div>
+    </div>
+    <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.js"></script>
+    <script>
+        $(function() {
+            $(".js_click").on("click", function() {
+                $("#infoBox").css('display', 'block');
+                $("#overlay").show();
+                $(".infobox_button").show();
+                return false;
+            });
+
+            $(".infobox_button").on("click", function() {
+                $("#infoBox").css('display', 'none');
+                $("#overlay").hide();
+                $(".infobox_button").hide();
+                return false;
+            });
+
+            (function() {
+
+                disabled(document.getElementById('overlay'))
+                disabled(document.getElementById('button'));
+                function disabled(obj) {
+                    var _clientY = null; // remember Y position on touch start
+
+                    obj.addEventListener('touchstart', function(event) {
+                        if (event.targetTouches.length === 1) {
+                            // detect single touch
+                            _clientY = event.targetTouches[0].clientY;
+                        }
+                    }, false);
+
+                    obj.addEventListener('touchmove', function(event) {
+                        if (event.targetTouches.length === 1) {
+                            // detect single touch
+                            disableRubberBand(event);
+                        }
+                    }, false);
+
+                    function disableRubberBand(event) {
+                        var clientY = event.targetTouches[0].clientY - _clientY;
+
+                        if (obj.scrollTop === 0 && clientY > 0) {
+                            // element is at the top of its scroll
+                            event.preventDefault();
+                        }
+
+                        if (isOverlayTotallyScrolled() && clientY < 0) {
+                            //element is at the top of its scroll
+                            event.preventDefault();
+                        }
+                    }
+
+                    function isOverlayTotallyScrolled() {
+                        // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight#Problems_and_solutions
+                        return obj.scrollHeight - obj.scrollTop <= obj.clientHeight;
+                    }
+                }
+            }())
+        });
+    </script>
+</body>
+
+</html>
